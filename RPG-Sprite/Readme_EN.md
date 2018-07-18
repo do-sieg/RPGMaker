@@ -15,6 +15,12 @@ Some constants have been added at the beginning of the script for **non-scripter
 
 It is also easier now for **scripters** to use aliases or edit methods in subclasses without altering the main class.
 
+### Screenshots
+Normal damage color change
+![Normal screen](../RPG-Sprite/rpg_sprite_screen1.png)
+Critical damage text and color change
+![Critical screen](../RPG-Sprite/rpg_sprite_screen1.png)
+
 
 ## RPG::Sprite (Ace Style)
 This second script is a little extension that should be updated over time. It imports a few effects from RPG Maker VX Ace into XP.
