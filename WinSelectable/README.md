@@ -1,6 +1,6 @@
 # Window_Selectable Reworked
 RPG Maker XP has a main class for all windows allowing selection: `Window_Selectable`.  
-Unfortunately, a lot os useful functions are missing from this class for some reason, and scripters are forced to code them on their own to have dynamic windows.  
+Unfortunately, a lot of useful functions are missing from this class for some reason, and scripters are forced to code them on their own to have dynamic windows.  
 There is also a `Window_Command` class that has some of the useful functions that `Window_Selectable` should have.
 
 I made three scripts to solve these issues. To use them, put them under the original `Window_Selectable` and `Window_Command` (the point is having those above your other windows). Use the order from the list below.
