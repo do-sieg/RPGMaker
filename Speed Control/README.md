@@ -1,5 +1,4 @@
 # Speed Control
-##### for RPG Maker XP, VX, and VX Ace
 This script allows the user to change the game speed during Debug/Test mode. By pressing F8, the game rotates between three speed settings (normal, high , low).
 It is **compatible with RPG Maker XP, VX and VX Ace**.
 
