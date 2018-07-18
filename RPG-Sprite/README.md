@@ -21,7 +21,6 @@ Normal damage font and color change
 
 ![Normal screen](../RPG-Sprite/rpg_sprite_screen1.png)
 
-
 Critical damage text, font and color change
 
 ![Critical screen](../RPG-Sprite/rpg_sprite_screen2.png)
@@ -33,6 +32,8 @@ This second script is a little extension that should be updated over time. It im
 - A special boss_collapse effect (to set an enemy as a boss, follow the instructions in the script), together with sound.
 
 ### Screenshots
-![Boss collapse](../RPG-Sprite/rpg_sprite_screen3.png)
 
 Boss collapse effect from VX Ace
+
+![Boss collapse](../RPG-Sprite/rpg_sprite_screen3.png)
+
