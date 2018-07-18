@@ -1,5 +1,5 @@
 #==============================================================================
-# ** RPG::Sprite (Rewrite) 1.03
+# ** RPG::Sprite (Rewrite) 1.04
 #------------------------------------------------------------------------------
 #  By Siegfried (http://saleth.fr)
 #------------------------------------------------------------------------------
@@ -243,11 +243,15 @@ module RPG
     #--------------------------------------------------------------------------
     # * Start Damage
     #--------------------------------------------------------------------------
-    def damage(value, critical)
+    def damage(value, tag = nil)
       dispose_damage
       # Replace default Miss text
       @damage_value = value == "Miss" ? miss_text : value
-      @critical = critical
+      # Replace old critical flag by a critical symbol tag
+      tag = :critical if tag == true
+      # Apply critical flag
+      @critical = tag == :critical
+      # Set damage sprite and duration
       make_damage_sprite
       @damage_duration = 40
     end
