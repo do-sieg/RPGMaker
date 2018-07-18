@@ -249,6 +249,7 @@ module RPG
       @damage_value = value == "Miss" ? miss_text : value
       # Replace old critical flag by a critical symbol tag
       tag = :critical if tag == true
+      tag = nil if tag == false
       # Apply critical flag
       @critical = tag == :critical
       # Set damage sprite and duration
