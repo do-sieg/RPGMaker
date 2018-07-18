@@ -4,7 +4,15 @@ This class is used in RPG Maker XP with battlers and characters, to display effe
 
 ## RPG::Sprite (Rewrite)
 This is a script that rewrites the core class RPG::Sprite for RPG Maker XP. The structure has been inspired from Sprite_Base from RPG Maker VX Ace, along with a few additions. All effects from this script are the ones already in RPG Maker XP.
-Some constants have been added at the beginning of the script for non-scripters to change a few things, like text font and color for all types of damage displayed on screen. You can also change the text for missed attacks.
+
+Some constants have been added at the beginning of the script for non-scripters to change a few things:
+* Text for missed attacks and critical hits.
+* Text font and color for all types of damage displayed on screen
+  * Normal damage
+  * Recovery damage
+  * Critical hits
+  * Missed attacks
+
 It is also easier now for scripters to use aliases or edit methods in subclasses without altering the main class.
 
 
