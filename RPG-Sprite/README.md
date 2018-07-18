@@ -16,13 +16,15 @@ Some constants have been added at the beginning of the script for **non-scripter
 It is also easier now for **scripters** to use aliases or edit methods in subclasses without altering the main class.
 
 ### Screenshots
-![Normal screen](../RPG-Sprite/rpg_sprite_screen1.png)
 
 Normal damage font and color change
 
-![Critical screen](../RPG-Sprite/rpg_sprite_screen2.png)
+![Normal screen](../RPG-Sprite/rpg_sprite_screen1.png)
+
 
 Critical damage text, font and color change
+
+![Critical screen](../RPG-Sprite/rpg_sprite_screen2.png)
 
 
 ## RPG::Sprite (Ace Style)
