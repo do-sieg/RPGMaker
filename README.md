@@ -1,2 +1,2 @@
 # RPGMaker
-A rewrite of the RPG::Sprite class for RPG Maker XP. This is the class that handles battlers and characters for damage, animations and various graphic effects..
+This is where various script systems are published for the RPG Maker Software. I primarily focus on the XP version, but some of the scripts can be used in VX or Ace.
