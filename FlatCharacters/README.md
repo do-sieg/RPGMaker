@@ -7,6 +7,6 @@ This script is meant to solve this issue. Simply add it above the Main script an
 
 ### Demonstration (courtesy of FoxFiesta)
 
-On the left, _199-Support07.png_. On the right, _199-Support07_flat.png_.
+On the left, `199-Support07.png`. On the right, `199-Support07_flat.png`.
 
 ![Demonstration](../FlatCharacters/flat_characters_video.gif)
