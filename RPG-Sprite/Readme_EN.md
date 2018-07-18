@@ -12,6 +12,7 @@ Some constants have been added at the beginning of the script for **non-scripter
   * Recovery damage
   * Critical hits
   * Missed attacks
+
 It is also easier now for **scripters** to use aliases or edit methods in subclasses without altering the main class.
 
 
