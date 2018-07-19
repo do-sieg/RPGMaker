@@ -24,7 +24,6 @@ Text with shadow
 ![Shadow](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen1.png)
 
 
-
 Text with outline
 
 ![Outline](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen2.png)
