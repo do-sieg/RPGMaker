@@ -27,8 +27,8 @@ Text with shadow
 
 Text with outline
 
-![Shadow](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen2.png)
+![Outline](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen2.png)
 
 Text with shadow and outline
 
-![Shadow](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen3.png)
+![Shadow and Outline](https://raw.githubusercontent.com/do-sieg/RPGMaker/master/FontEffects/font_fx_screen3.png)
