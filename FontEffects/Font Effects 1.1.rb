@@ -4,13 +4,15 @@
 #  By Siegfried (http://saleth.fr)
 #------------------------------------------------------------------------------
 #  This script adds shadow and outline properties to the Font class.
-#  To activate these properties in a window, use the following codes:
+#  To use these properties in a specific window, use the following lines:
 #    self.contents.font.shadow = true
 #    self.contents.font.outline = true
-#  To give all future fonts these properties, use these codes:
-#    Font.default_shadow = true/false
-#    Font.default_outline = true/false
-#  Colors can be changed thanks to .shadow_color and .out_color.
+#  To set these properties to be used by default, use these lines anywhere:
+#    Font.default_shadow = true
+#    Font.default_outline = true
+#  Colors can be changed using .shadow_color and .out_color.
+#  Alternatively, Font.default_shadow_color and Font.default_out_color can be
+#  used to make a general change.
 #==============================================================================
 
 #==============================================================================
