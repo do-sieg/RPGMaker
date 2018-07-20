@@ -81,7 +81,9 @@ class Window_Selectable < Window_Base
   # * Draw Cursor Rectangle
   #--------------------------------------------------------------------------
   def draw_cursor
-    self.cursor_rect = command_rect(@index)
+    rect = command_rect(@index)
+    rect.y -= self.top_row * row_height
+    self.cursor_rect = rect
   end
   #--------------------------------------------------------------------------
   # * Frame Update
