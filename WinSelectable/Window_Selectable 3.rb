@@ -33,6 +33,12 @@ class Window_Selectable < Window_Base
     end
   end
   #--------------------------------------------------------------------------
+  # * Command X-Coordinate Modifier
+  #--------------------------------------------------------------------------
+  def command_display_x
+    return 4
+  end
+  #--------------------------------------------------------------------------
   # * Set Alignment
   #--------------------------------------------------------------------------
   def set_align(value)
@@ -54,25 +60,32 @@ class Window_Selectable < Window_Base
     self.contents.font.color = normal_color
     self.contents.font.color = disabled_color if disabled?(index)
     clear_row(index)
-    self.contents.draw_text(command_rect(index), command_text(index), @align)
-  end
-  #--------------------------------------------------------------------------
-  # * Command Display Area
-  #--------------------------------------------------------------------------
-  def command_rect(index)
-    x = 4 + index % @column_max * ((self.width - 32) / @column_max)
-    y = (index / @column_max) * row_height
-    w = (self.contents.width - x * 2) / @column_max
-    return Rect.new(x, y, w, row_height)
+    self.contents.draw_text(command_text_rect(index), command_text(index),
+      @align)
   end
   #--------------------------------------------------------------------------
   # * Clear Row
   #--------------------------------------------------------------------------
   def clear_row(index)
-    y = command_rect(index).y
-    h = command_rect(index).height
-    rect = Rect.new(0, y, self.contents.width / @column_max, h)
-    self.contents.fill_rect(rect, Color.new(0, 0, 0, 0))
+    self.contents.fill_rect(command_rect(index), Color.new(0, 0, 0, 0))
+  end
+  #--------------------------------------------------------------------------
+  # * Command Area
+  #--------------------------------------------------------------------------
+  def command_rect(index)
+    x = index % @column_max * ((self.width - 32) / @column_max)
+    y = (index / @column_max) * row_height
+    w = self.contents.width / @column_max
+    return Rect.new(x, y, w, row_height)
+  end
+  #--------------------------------------------------------------------------
+  # * Command Text Area
+  #--------------------------------------------------------------------------
+  def command_text_rect(index)
+    rect = command_rect(index).clone
+    rect.x += command_display_x
+    rect.width -= command_display_x * 2
+    return rect
   end
   #--------------------------------------------------------------------------
   # * Command
