@@ -28,7 +28,7 @@ class Window_Selectable < Window_Base
     if commands != @commands
       @commands = commands
       @item_max = [commands.size, 1].max
-      setup_contents(self.width, @item_max * row_height + 32)
+      setup_contents(self.width, row_max * row_height + 32)
       refresh
     end
   end
