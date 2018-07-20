@@ -30,7 +30,7 @@ Now, here are a few useful functions that can be used for all selectable windows
 * `set_align(value)`: this function changes the alignment of all commands. Using 0 (left), 1 (center) or 2 (right), it changes the variable `@align` and refreshes the window.
 * `draw_item(index)`: this function was originally in `Window_Command`. It has been moved here and it handles the drawing of a command at the spot given by `index`. Font color doesn't have to be defined anymore for disabled commands, it is done automatically.
 * `command_rect(index)`: this handles the area where the command will be displayed. It is used when clearing a command text and to draw the cursor.
-* `command_text_rect(index)`: this handles the area where the command text will be displayed it is the same as the previous method except it uses `command_display_x` to set a margin. It can be used to move slightly the text, etc.
+* `command_text_rect(index)`: this handles the area where the command text will be displayed. It is the same as the previous method except it uses `command_display_x` to set a margin. It can be used to move slightly the text, etc.
 * `clear_row(index)`: this is only useful if you need to clear the area for a command for some reason. The script uses it before drawing a command, avoiding to refresh the whole window for just one command.
 * `command(index)`: another extremely useful function returning the command for the given `index`. Without argument, it returns the selected item.
 * `command_text(index)`: this is used to display the text for each command. By default, it is the same than the previous function but it can be used for windows storing anything else than text like actors, skills, items, etc.
