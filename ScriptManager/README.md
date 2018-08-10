@@ -1,3 +1,5 @@
+(French version: https://github.com/do-sieg/RPGMaker/blob/master/ScriptManager/Readme_FR.md)
+
 
 # ScriptManager 1.0a
 This script is the result of a poor attempt to make something simpler. It ended up being a clone (of lesser quality) of the buildozer by Joke (https://github.com/RMEx/buildozer).
@@ -95,7 +97,7 @@ Restarting the editor will be necessary to see these changes.
 * You can add **comments** like in Ruby, using `#`. This is useful to deactivate a full script very easily.
 * Spaces at the beginning or the end of a line do not count.
 * Each script or subfolder should be on its own line, in the order the game will load it.
-* Subfolders have to be followed by a slash (/). Example:
+* Subfolders have to be followed by a slash (`/`). Example:
 ```ruby
     Subfolder/
     Script 1
@@ -105,5 +107,5 @@ Restarting the editor will be necessary to see these changes.
 ---
 Inside the script editor, **categories** are separated by an empty row.
 * Category titles start with `@ ` (the space is necessary). These categories will be used as subfolders when exported.
-* Every script placed below a category until the next one will be placed in that subfolder.
+* Every script placed below a category title until the next one will be placed in that subfolder.
 * Scripts not belonging to a category for some reason will be placed in a category named -UNSORTED when exported.
