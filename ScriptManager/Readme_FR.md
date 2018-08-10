@@ -10,7 +10,7 @@ Ce script est un système complet qui permet d'utiliser des fichiers externes co
 * Les scripts sont exportés dans un dossier **Scripts** dans le dossier du projet. Ce dossier est le **dossier racine** du système. Dans ce dossier, il y aura un sous-dossier nommé **_Backup** où seront sauvegardées des copies des scripts avant tout manipulation à risque.
 * Il y a aussi un fichier **_List.rb**, qui contiendra la liste des fichiers de scripts ou des sous-dossiers à charger.  
 L'ordre dans lequel seront chargé tous les scripts est celui de cette liste.  
-Exemple:
+Exemple :
 ```ruby
     Script 1
     Script 2
@@ -37,7 +37,7 @@ Des codes à copier-coller sont fournis plus bas.
 ####  ScriptManager.setup
 Cette fonction installe le système. Elle crée le dossier racine (Scripts), le fichier de liste et le dossier de sauvegarde.  
 Normalement, cette fonction n'a pas besoin d'être appelée, puisqu'elle se lance automatiquement lors de l'exportation. Mais elle peut servir à vérifier si le système fonctionne.  
-* Code:
+* Code :
 ```ruby
     Kernel.require(File.expand_path("ScriptManager.rb")); ScriptManager.setup
 ```
@@ -53,25 +53,25 @@ Quelques informations utiles:
 * **Base Sprites**, **Base Windows**, **Base Scenes**, et **Main Process**. Les scripts ajoutés par l'utilisateur (entre Scene_Debug et Main) sont exportés dans le sous-dossier **Materials**. Ces noms ne doivent JAMAIS être utilisés pour autre chose.
 * Le processus décrit au point précédent ne se produit que s'il n'y a aucun formatage dans la liste de scripts. Si la liste de l'éditeur a déjà été formatée, le système la suivra en priorité. Plus d'informations sur le formatage plus bas.
 
-Dans tous les cas, les sous-dossiers et les listes sont faits et arrangés de façon automatique.
-Des fichiers existants peuvent être remplacés, ce qui signifie que des copies manuelles seront parfois nécessaires.
-* Code:
+Dans tous les cas, les sous-dossiers et les listes sont faits et arrangés de façon automatique.  
+Des fichiers existants pouvant être remplacés, des copies manuelles seront parfois nécessaires.
+* Code :
 ```ruby
     Kernel.require(File.expand_path("ScriptManager.rb")); ScriptManager.export
 ```
 ---
 ####  ScriptManager.externalize
-This does exactly the same as `.export`, but continues by removing all scripts from inside the script editor and replace it by a unique loading script (see below).  
-Restarting the editor will be necessary to see these changes.
-* Code:
+Ceci fait exactement la même chose qu'`.export`, mais continue en supprimant tous les scripts de l'éditeur pour les remplacer par un script unique qui va charger les scripts externes (voir plus bas).  
+Redémarrer RPG Maker sera nécessaire pour voir ces changements.
+* Code :
 ```ruby
     Kernel.require(File.expand_path("ScriptManager.rb")); ScriptManager.externalize
 ```
 ---
 ####  ScriptManager.load
-This allows to load scripts from external files at the start of the game.  
-To be able to manage errors coming from external files, a function has been added. The code given below is automatically set in the script editor when using `.externalize`, but here it is in case of problems.
-* Code:
+Ceci permet de charger les script externes et de les utiliser dans le jeu.  
+Pour gèrer les erreurs provenant de ces fichiers externes, une fonction doit être ajoutée. Le code ci-dessous apparaît automatiquement dans l'éditeur quand `.externalize` est utilisée, mais il est reproduit ici en cas de problèmes.
+* Code :
 ```ruby
     begin
       Kernel.require(File.expand_path("ScriptManager.rb")); ScriptManager.load
@@ -81,28 +81,28 @@ To be able to manage errors coming from external files, a function has been adde
 ```
 ---
 ####  ScriptManager.import
-This is the opposite of `.export`: it brings back all scripts from external files back to the script editor, saving them to `Scripts.rxdata`. External files will still be present in the root folder.  
-The list in the editor will follow the formatting rules (see below).  
-Restarting the editor will be necessary to see these changes.
-* Code:
+C'est l'opposé d'`.export`: cette fontion ramène tous les scripts des fichiers externes dans l'éditeur de RPG Maker, en les sauvegardant dans `Scripts.rxdata`. Les fichiers externes ne seront pas supprimés pour autant.  
+La liste dans l'éditeur suivra certaines règles de formatage (voir ci-dessous).  
+Redémarrer RPG Maker sera nécessaire pour voir ces changements.
+* Code :
 ```ruby
     Kernel.require(File.expand_path("ScriptManager.rb")); ScriptManager.import
 ```
 ---
-## Syntax & Formatting
-**List files** are flexible.  
-* You can add **comments** like in Ruby, using `#`. This is useful to deactivate a full script very easily.
-* Spaces at the beginning or the end of a line do not count.
-* Each script or subfolder should be on its own line, in the order the game will load it.
-* Subfolders have to be followed by a slash (/). Example:
+## Syntaxe & Formatage
+Les **fichiers de liste** sont flexibles.  
+* Vous pouvez y mettre des **commentaires** comme en Ruby, en utilisant `#`. Cela peut être utile pour désactiver un script entier très facilement.
+* Les espaces en début et fin de ligne ne sont pas pris en compte.
+* Chaque script ou sous-dossier doit être sur sa ligne, en suivant l'ordre dans lequel le jeu va le charger.
+* Les sous-dossiers doivent être suivis d'un slash (`/`). Exemple :
 ```ruby
-    Subfolder/
+    Sous-dossier/
     Script 1
-    #Script 2 (deactivated)
+    #Script 2 (désactivé)
     Script 3
 ```
 ---
-Inside the script editor, **categories** are separated by an empty row.
-* Category titles start with `@ ` (the space is necessary). These categories will be used as subfolders when exported.
-* Every script placed below a category until the next one will be placed in that subfolder.
-* Scripts not belonging to a category for some reason will be placed in a category named -UNSORTED when exported.
+Dans l'éditeur de scripts, les **catégories** sont séparées par un script vide.
+* Les titres de catégories commencent par `@ ` (l'espace est indispensable). Ces catégories seront utilisées comme sous-dossiers durant l'exportation.
+* Chaque script placé sous un titre de catégorie jusqu'au prochain appartient à cette catégorie.
+* Les scripts sans catégories seront placés dans une catégorie nommée -UNSORTED lors de l'exportation.
