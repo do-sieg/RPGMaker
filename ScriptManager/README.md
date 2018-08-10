@@ -49,7 +49,7 @@ There are a few useful things to know here:
 * Empty scripts are not exported
 * If a script has no name, it will be renamed to -Untitled-
 * If many scripts share one name, (1), (2), etc. is added after their name
-* Characters forbidden on file names are all replaced by a dash (-).
+* Characters forbidden on file names are all replaced by a dash (`-`).
 * Default RPG Maker scripts are organised in subfolders: **Base Game Objects**,
 * **Base Sprites**, **Base Windows**, **Base Scenes**, and **Main Process**. Scripts added by the user (the ones between Scene_Debug and Main) are exported in a **Materials** subfolder. These names should NEVER be used for other scripts.
 * The previous behaviour only happens when there is no formatting in the script list. If the list has already been formatted, the system will follow that instead. See below for more information on formatting.
