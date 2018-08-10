@@ -54,7 +54,7 @@ There are a few useful things to know here:
 * **Base Sprites**, **Base Windows**, **Base Scenes**, and **Main Process**. Scripts added by the user (the ones between Scene_Debug and Main) are exported in a **Materials** subfolder. These names should NEVER be used for other scripts.
 * The previous behaviour only happens when there is no formatting in the script list. If the list has already been formatted, the system will follow that instead. See below for more information on formatting.
 
-In any case, the subfolders and lists are made and ordered automatically.
+In any case, the subfolders and lists are made and ordered automatically.  
 Existing files could be overwritten, so manual backups will be necessary.
 * Code:
 ```ruby
