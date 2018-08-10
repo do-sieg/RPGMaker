@@ -28,7 +28,7 @@ To use a subfolder in the root list, add a slash (`/`) behind the subfolder name
 * Without a slash, the system will look for a .rb file with that name.
 ---
 ## Functions
-There are a few functions to use with the ScriptManager module. In order to be able to call it from its location, all calls must be preceeded by :
+There are a few functions to use with the ScriptManager module. In order to be able to call it from its location, all calls must be preceeded by:
 ```ruby
     Kernel.require(File.expand_path("ScriptManager.rb"))
 ```
