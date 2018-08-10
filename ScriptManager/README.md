@@ -103,6 +103,6 @@ Restarting the editor will be necessary to see these changes.
 ```
 ---
 Inside the script editor, **categories** are separated by an empty row.
-* Category titles start with "@ " (the space is necessary). These categories will be used as subfolders when exported.
+* Category titles start with `@ ` (the space is necessary). These categories will be used as subfolders when exported.
 * Every script placed below a category until the next one will be placed in that subfolder.
 * Scripts not belonging to a category for some reason will be placed in a category named -UNSORTED when exported.
