@@ -4,7 +4,7 @@ This script is the result of a poor attempt to make something simpler. It ended 
 This script is a full system allowing to use external files to run as scripts for RPG Maker XP. It allows the user to
 export, use and import these scripts.
 
-**NOTE THAT THIS IS A DANGEROUS SCRIPT TO USE. MAKE COPIES OF YOUR PROJECT BEFORE USING IT.**
+**Note that this is a dangerous script to use. make copies of your project before using it.**
 
 ## Overview
 * Scripts are exported in a folder named **Scripts** in the project folder. This folder is called the **root folder**. Inside, there will be a **_Backup** folder used by the system to store copies of the scripts during a risky manipulation.  
