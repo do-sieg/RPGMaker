@@ -8,12 +8,15 @@
 #------------------------------------------------------------------------------
 #  Overview
 #------------------------------------------------------------------------------
+#  First of all, this script must be saved in a file called 'ScriptManager.rb'
+#  in the project folder.
 #  Scripts are exported in a folder named 'Scripts' in the project folder. This
 #  folder is called the root folder. Inside, there will be a _Backup folder used
 #  by the system to store copies of the scripts during a risky manipulation.
 #  There is also a file named _List.rb, which will contain the list of script
 #  files and subfolders to load. The order in which all scripts load is the one
-#  on this list:
+#  on the list.
+#  Example:
 #    Script 1
 #    Script 2
 #    etc.
@@ -31,12 +34,12 @@
 #  Functions
 #------------------------------------------------------------------------------
 #  There are a few functions to use with the ScriptManager module. In order to
-#  be able to call it from its location, all calls must be preceeded by :
+#  be able to call it from its location, all calls must be preceeded by:
 #    Kernel.require(File.expand_path("ScriptManager.rb"))
 #  Ready-to-use codes are given below.
 #------------------------------------------------------------------------------
 #  ScriptManager.setup
-#  This is used to setup the system. It creates the root folder, the list File
+#  This is used to setup the system. It creates the root folder, the list file
 #  and the backup subfolder. Usually, it is unnecessary to call it, since it is
 #  done automatically when exporting scripts, but it can be useful to check if
 #  the system works.
@@ -54,7 +57,7 @@
 #     Base Sprites, Base Windows, Base Scenes, and Main Process. Scripts added
 #     by the user (the ones between Scene_Debug and Main) are exported in a
 #     Materials subfolder. These names should NEVER be used for other scripts.
-#    -The previous behaviour only happens when there are no formatting in the
+#    -The previous behaviour only happens when there is no formatting in the
 #     script list. If the list has already been formatted, the system will
 #     follow that instead. See below for more information on formatting.
 #  In any case, the subfolders and lists are made and ordered automatically.
@@ -106,7 +109,7 @@
 #    Script 3
 #------------------------------------------------------------------------------
 #  Inside the script editor, categories are separated by an empty row.
-#  Category titles start with "@ " (the space is necessary). These categories
+#  Category titles start with '@ ' (the space is necessary). These categories
 #  will be used as subfolders when exported. Every script placed below a
 #  category until the next one will be placed in that subfolder.
 #  Scripts not belonging to a category for some reason will be placed in a
