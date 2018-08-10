@@ -7,6 +7,7 @@ export, use and import these scripts.
 **Note that this is a dangerous script to use. Make copies of your project before using it.**
 
 ## Overview
+* First of all, this script must be saved in a file called `ScriptManager.rb` in the project folder.
 * Scripts are exported in a folder named **Scripts** in the project folder. This folder is called the **root folder**. Inside, there will be a **_Backup** folder used by the system to store copies of the scripts during a risky manipulation.  
 * There is also a file named **_List.rb**, which will contain the list of script files and subfolders to load.  
 The order in which all scripts load is the one on the list.  
