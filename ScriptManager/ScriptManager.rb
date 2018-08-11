@@ -136,6 +136,7 @@ module ScriptManager
   # Error messages
   NO_TEST_ERR = "The project must be open in the editor to use ScriptManager"
   NO_EXPORT_ERR = "There seems to be nothing to export."
+  NO_IMPORT_ERR = "There seems to be nothing to import."
 
   class << self
     #--------------------------------------------------------------------------
@@ -325,7 +326,7 @@ module ScriptManager
     #--------------------------------------------------------------------------
     # * Setup
     #--------------------------------------------------------------------------
-    def setup(message = true)
+    def setup(export = false)
       # Check if the game is launched through the editor
       unless $DEBUG
         print NO_TEST_ERR
@@ -334,12 +335,15 @@ module ScriptManager
       # Create root folder and subfolders
       Dir.mkdir("#{ROOT_DIR}") rescue nil
       Dir.mkdir("#{ROOT_DIR}/#{BACKUP_DIR}") rescue nil
-      # Create root list
-      file = File.open("#{ROOT_DIR}/#{LIST_FILENAME}", "wb")
-      file.write(list_header)
-      file.close
-      # Display information popup
-      print SETUP_MSG if message
+      # If the setup isn't called during an export
+      unless export
+        # Create root list
+        file = File.open("#{ROOT_DIR}/#{LIST_FILENAME}", "wb")
+        file.write(list_header)
+        file.close
+        # Display information popup
+        print SETUP_MSG
+      end
     end
     #--------------------------------------------------------------------------
     # * Backup Scripts.rxdata
@@ -348,7 +352,7 @@ module ScriptManager
       # Get the name of the scripts data file
       filename = scripts_data_filename
       # Setup the folders and files without informing the user
-      setup(false)
+      setup(true)
       # Create a copy in the backup subfolder
       path = "#{ROOT_DIR}/#{BACKUP_DIR}/"
       ext = File.extname(filename)
@@ -377,7 +381,7 @@ module ScriptManager
         return
       end
       # Setup the folders and files without informing the user
-      setup(false)
+      setup(true)
       # Make the script tree
       formatted = int_list.any? {|name| name if section_title?(name) }
       section_tree = make_export_tree(formatted)
@@ -526,6 +530,10 @@ module ScriptManager
       backup_rxdata
       # Make the final list with formatting
       list = make_virtual_list(true)
+      if list.empty?
+        print NO_IMPORT_ERR
+        exit
+      end
       id_table = []
       scripts_table = []
       list.each do |name|
