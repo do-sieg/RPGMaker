@@ -347,6 +347,8 @@ module ScriptManager
     def backup_rxdata
       # Get the name of the scripts data file
       filename = scripts_data_filename
+      # Setup the folders and files without informing the user
+      setup(false)
       # Create a copy in the backup subfolder
       path = "#{ROOT_DIR}/#{BACKUP_DIR}/"
       ext = File.extname(filename)
