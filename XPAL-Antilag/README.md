@@ -19,19 +19,20 @@ Most Antilag scripts in the past have all been about deactivating update for spr
   * on EACH FRAME
   * even in maps that have absolutely no tile with a bush tile...
 
-XPAL uses a simple array storing bush tiles. When the character actually moves, it checks if a change is necessary and only then we change the sprite.
+  XPAL uses a simple array storing bush tiles. When the character actually moves, it checks if a change is necessary and only then we change the sprite.
 * In a similar manner, counter tiles have been stored in a simple array to speed up the process.
 * To manage characters on tiles, a new function `.on_move` has been added to Game_Character, checking if the character changed its position. This function can be useful for other scripts.
-* The main culprit for the lag (maybe half of it) was the Sprite_Character class, more precisely its update function. 
+* The main culprit for the lag (maybe half of it) was the Sprite_Character class, more precisely its update function. It was being called constantly and without any restriction or check to see if it was necessary. X/Y coordinates, transparency, opacity, bush depth... eveything was constantly being updated.
 
+  XPAL does a selective update changing only values when it is necessary. For example, we only change the coordinates if the character comes near the edges of the map. We only update the opacity when the character actually changes it. Bush depth is updated when the character enters or leaves a bush tile, if there is even one on the map. You get the idea.
+* And of course, off-screen sprites are not updated, to lighten up the engine. Character sprite size is taken into account, and there is a little margin to be sure nothing weird happens, just in case.
 
-La mise à jour des sprites de personnages se faisait de façon constante et sans aucune restriction pour voir si le changement était nécessaire. Les coordonnées X, Y, Z, la visibilité, l'opacité, le truc des tiles d'herbe, etc... étaient tous constamment mis à jour.
-J'ai décidé de faire une mise à jour sélective qui change les valeurs seulement si nécessaire. Le personnage bouge vers les bords de l'écran ? On change ses coordonnées d'affichage. Il devient transparent ? On change sa transparence. Il marche sur de l'herbe ? Vous voyez le concept...
-Enfin, bien entendu, on ne met pas à jours les sprites des personnages hors-écran, pour alléger un peu le processus. La taille du character est prise en compte et j'ai laissé une petite marge juste au cas où.
-Alors... est-ce que ça marche ?
-- Oui. Si on n'est pas à du full 40 FPS, je tourne personnellement à 37-40 sur une grande map avec près de 200 événements mobiles. Et s'ils sont hors écran, je suis à 39-40.
-- Cela dit, le lag peut venir de beaucoup de choses : processeur faible, trop d'applications ouvertes, etc...
+### Does it work?
+* Yes. Even if the result isn't always at 40 FPS, I personally got from around 16 FPS to 37-40 FPS on a map with 200 moving events. If I go to a corner of the map where there is no character other than the player, I am at 39-40.
+* Just know that the lag can also have external reasons: old processor, too many open programs...
+* Since this script changes the very way maps and characters are organised, do not expect a full compatibility with other scripts. For example, organizing characters in tiles is not compatible with pixel movement scripts, by any logic. However, I managed to make changes and make it work with my custom movement systems, so it shouldn't be a huge obstacle. Also, if you have systems changing tile properties in-game, make sure to edit XPAL to reflect the changes in the arrays of the 2D Table for map passages.
 
-Le script est en version béta pour vérifier qu'il marche bien chez tout le monde. Testez-le dans un projet vierge de préférence ou téléchargez la Démo ici.
-
-Voici le script (je ferai un truc plus classe sur gitHub quand j'aurai le temps).
+### How to use
+* First, you need my rewrite of Sprite_Character.
+* Then, paste the 6 scripts or the megascript version that contains all of them if you feel lazy.
+* A demo is available for you to try.
