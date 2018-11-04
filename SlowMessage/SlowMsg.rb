@@ -1,7 +1,7 @@
 #==============================================================================
 # ** Slow Message (VX Ace)
 #------------------------------------------------------------------------------
-#  By Siegfried (http://saleth.fr), base on Phantou's work
+#  By Siegfried (http://saleth.fr), based on Phantou's work
 #------------------------------------------------------------------------------
 #  This script allows the game to slow down the text speed in a message using
 #  control characters.
