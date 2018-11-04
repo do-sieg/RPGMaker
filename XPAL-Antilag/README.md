@@ -37,4 +37,4 @@ Most Antilag scripts in the past have all been about deactivating update for spr
 ### How to use
 * First, you need my [rewrite of Sprite_Character](https://github.com/do-sieg/RPGMaker/blob/master/SpriteCharacter/Sprite_Character%20(Rewrite)).
 * Then, paste the 6 scripts or the megascript version that contains all of them if you feel lazy.
-* A demo is available for you to try.
+* A [demo](https://github.com/do-sieg/RPGMaker/blob/master/XPAL-Antilag/XPAL%20Demo.exe) is available for you to try.
