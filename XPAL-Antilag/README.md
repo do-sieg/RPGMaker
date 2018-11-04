@@ -33,6 +33,6 @@ Most Antilag scripts in the past have all been about deactivating update for spr
 * Since this script changes the very way maps and characters are organised, do not expect a full compatibility with other scripts. For example, organizing characters in tiles is not compatible with pixel movement scripts, by any logic. However, I managed to make changes and make it work with my custom movement systems, so it shouldn't be a huge obstacle. Also, if you have systems changing tile properties in-game, make sure to edit XPAL to reflect the changes in the arrays of the 2D Table for map passages.
 
 ### How to use
-* First, you need my rewrite of Sprite_Character.
+* First, you need my ![rewrite of Sprite_Character](https://github.com/do-sieg/RPGMaker/blob/master/SpriteCharacter/Sprite_Character%20(Rewrite)).
 * Then, paste the 6 scripts or the megascript version that contains all of them if you feel lazy.
 * A demo is available for you to try.
