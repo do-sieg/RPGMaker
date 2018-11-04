@@ -1,5 +1,3 @@
-(French version: https://github.com/do-sieg/RPGMaker/blob/master/XPAL-Antilag/Readme_FR.md)
-
 # XPAL (XP Antilag System)
 Ce script résout un grand problème de RPG Maker XP: le ralentissement (ou lag) du jeu quand trop de personnages sont sur la map.
 
@@ -38,4 +36,4 @@ De plus, si vous avez des systèmes qui changent les propriétés des carreaux e
 ### Utilisation
 * Avant tout, il faut ajouter ma [réécriture Sprite_Character](https://github.com/do-sieg/RPGMaker/blob/master/SpriteCharacter/Sprite_Character%20(Rewrite)).
 * Ensuite, collez les 6 scripts ou la version megascript qui les fusionne en un script si vous êtes pressé.
-* Une démonstration est disponible pour essayer le système.
+* Une [démonstration](https://github.com/do-sieg/RPGMaker/blob/master/XPAL-Antilag/XPAL%20Demo.exe) est disponible pour essayer le système.
