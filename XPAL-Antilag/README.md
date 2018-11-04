@@ -1,3 +1,5 @@
+(French version: https://github.com/do-sieg/RPGMaker/blob/master/XPAL-Antilag/Readme_FR.md)
+
 # XPAL (XP Antilag System)
 This script fixes a huge issue in RPG Maker: the game slowing down when too many characters are used on a map.
 
