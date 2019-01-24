@@ -1,5 +1,5 @@
 #==============================================================================
-# ** RPG::Sprite (Rewrite) 1.04
+# ** RPG::Sprite (Rewrite) 1.05
 #------------------------------------------------------------------------------
 #  By Siegfried (http://saleth.fr)
 #------------------------------------------------------------------------------
@@ -383,7 +383,6 @@ module RPG
         @animation_duration = @animation.frame_max
         load_animation_bitmap
         make_animation_sprites
-        set_animation_origin(@animation)
       end
     end
     #--------------------------------------------------------------------------
@@ -400,7 +399,6 @@ module RPG
         @loop_animation_index = 0
         load_loop_animation_bitmap
         make_loop_animation_sprites
-        set_animation_origin(@loop_animation)
       end
     end
     #--------------------------------------------------------------------------
@@ -473,28 +471,29 @@ module RPG
       end
     end
     #--------------------------------------------------------------------------
-    # * Set Animation Origin
+    # * Get Animation Origin
     #--------------------------------------------------------------------------
-    def set_animation_origin(animation)
+    def get_animation_origin(animation)
       # If the animation targets the screen
       if animation.position == 3
         if self.viewport == nil
-          @ani_ox = Graphics.width / 2
-          @ani_oy = Graphics.height / 2
+          ani_ox = Graphics.width / 2
+          ani_oy = Graphics.height / 2
         else
-          @ani_ox = self.viewport.rect.width / 2
-          @ani_oy = self.viewport.rect.height / 2
+          ani_ox = self.viewport.rect.width / 2
+          ani_oy = self.viewport.rect.height / 2
         end
       # If the animation targets different positions
       else
-        @ani_ox = x - ox + self.bitmap.width / 2
-        @ani_oy = y - oy + self.bitmap.height / 2
+        ani_ox = x - ox + self.bitmap.width / 2
+        ani_oy = y - oy + self.bitmap.height / 2
         if animation.position == 0
-          @ani_oy -= self.bitmap.height / 2
+          ani_oy -= self.bitmap.height / 2
         elsif animation.position == 2
-          @ani_oy += self.bitmap.height / 2
+          ani_oy += self.bitmap.height / 2
         end
       end
+      return [ani_ox, ani_oy]
     end
     #--------------------------------------------------------------------------
     # * Determine if Effect is Executing
@@ -581,6 +580,10 @@ module RPG
       self.blend_type = 1
       self.color.set(255, 64, 64, 255)
       self.opacity = 256 - (48 - @effect_duration) * 6
+      if @effect_duration == 0
+        self.blend_type = 0
+        self.color.set(0, 0, 0, 0)
+      end
     end
     #--------------------------------------------------------------------------
     # * Update Blink Effect
@@ -655,6 +658,8 @@ module RPG
     # * Set Animation Sprite
     #--------------------------------------------------------------------------
     def animation_set_sprites(cell_data, position, loop = false)
+      # Get animation origin position 
+      origin = get_animation_origin(!loop ? @animation : @loop_animation)
       # Get sprites and bitmaps
       sprites = !loop ? @animation_sprites : @loop_animation_sprites
       bitmaps = !loop ? @animation_bitmaps : @loop_animation_bitmaps
@@ -672,8 +677,8 @@ module RPG
         sprite.bitmap = bitmaps[bitmap_index]
         sprite.visible = true
         sprite.src_rect.set(pattern % 5 * 192, pattern / 5 * 192, 192, 192)
-        sprite.x = @ani_ox + cell_data[i, 1]
-        sprite.y = @ani_oy + cell_data[i, 2]
+        sprite.x = origin[0] + cell_data[i, 1]
+        sprite.y = origin[1] + cell_data[i, 2]
         sprite.z = 2000
         sprite.ox = 96
         sprite.oy = 96
