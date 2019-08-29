@@ -49,7 +49,7 @@ class Scene_Map
     # Stop BGM
     unless Battle_Sound::NO_BATTLE_BGM_MAPS.include?($game_map.map_id)
       $game_system.bgm_stop
-    endx
+    end
     # Play battle start SE
     unless Battle_Sound::NO_BATTLE_SE_MAPS.include?($game_map.map_id)
       $game_system.se_play($data_system.battle_start_se)
