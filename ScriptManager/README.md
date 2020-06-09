@@ -3,7 +3,7 @@
 
 # ScriptManager 1.0a
 This script is the result of a poor attempt to make something simpler. It ended up being a clone (of lesser quality) of the buildozer by Joke (https://github.com/RMEx/buildozer).
-This script is a full system allowing to use external files to run as scripts for RPG Maker XP. It allows the user to
+This script is a full system allowing the use of external files to run as scripts for RPG Maker XP. It allows the user to
 export, use and import these scripts.
 
 **Note that this is a dangerous script to use. Make copies of your project before using it.**
